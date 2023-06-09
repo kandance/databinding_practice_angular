@@ -9,6 +9,7 @@ export class GameControlComponent implements OnInit {
   @Output() intervalFired = new EventEmitter<number>();
   interval;
   lastNumber: number = 1;
+  disableStartButton = false;
 
   constructor() {}
 
@@ -22,10 +23,13 @@ export class GameControlComponent implements OnInit {
       console.log(this.lastNumber);
       this.lastNumber += 1;
     }, 1000);
+
+    this.disableStartButton = true;
   }
 
   endGame() {
     clearInterval(this.interval);
     console.log("game ended");
+    this.disableStartButton = false;
   }
 }

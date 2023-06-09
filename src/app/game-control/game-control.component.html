@@ -1,4 +1,10 @@
 <div>
-  <button (click)="startGame()">Start</button>
-  <button (click)="endGame()">End</button>
+  <button
+    class="btn btn-success"
+    (click)="startGame()"
+    [disabled]="disableStartButton"
+  >
+    Start Game
+  </button>
+  <button class="btn btn-danger" (click)="endGame()">Pause Game</button>
 </div>
