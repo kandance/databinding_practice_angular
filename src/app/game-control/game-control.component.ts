@@ -29,7 +29,7 @@ export class GameControlComponent implements OnInit {
 
   endGame() {
     clearInterval(this.interval);
-    console.log("game ended");
+    console.log("game paused");
     this.disableStartButton = false;
   }
 }
